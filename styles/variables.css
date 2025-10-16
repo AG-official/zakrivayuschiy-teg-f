@@ -1,1 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+/* Шрифты */
+  --primary-font-family: "Inter-Variable", Arial, sans-serif;
+  --accent-font-family: "PressStart2P", Arial, sans-serif;
+
+}
