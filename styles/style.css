@@ -22,7 +22,7 @@
 
 .header {
   display: grid;
-  margin-block: 100px clamp(0px, -130.28px + 34.74vw, 370px);
+  margin: 100px clamp(0px, -130.28px + 34.74vw, 370px);
   /* justify-self: center; */
   gap: 20px;
   font-family: var(--accent-font-family), Arial, sans-serif;
@@ -52,6 +52,8 @@
 }
 
 .content__cards-list {
+  display: grid;
+  gap: 50px;
 
 }
 
@@ -59,22 +61,114 @@
 
 }
 
-.card__title {
+.card {
+  background-color: var(--content-bg-color, #fff);
+  border: 2px #000 solid;
+  inline-size: var(--content-width, clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem)); /* использован clamp для исключения медиа-запросов */
+  min-inline-size: 375px;
+}
 
+.card__title {
+  font-size: var(--card-font-size, 1.125rem);
+  font-variation-settings: "wght" var(--card-title-font-weight, 715);
+  padding: 4px 10px;
+}
+
+.card_image-wrapper {
+  position: relative;
+  block-size: var(--content-width);
 }
 
 .card__image {
-
+  inline-size: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  object-position: right;
 }
 
 .card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  font-family: var(--accent-font-family);
+  font-size: 0.875rem;
+  opacity: 0.5;
+  text-shadow:
+    -1px 0 var(--text-stroke-color),
+    0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color),
+    0 -1px var(--text-stroke-color);
+}
 
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
 }
 
 .card__paragraph-wrapper {
-
+  display: grid;
+  gap: 25px;
+  padding: 25px;
 }
 
 .card__paragraph {
-  
+  font-size: var(--card-font-size, 1.125rem);
+  line-height: 21px;
+}
+
+.card__buttons-wrapper {
+  justify-self: end;
+  display: flex;
+  align-items: end;
+  /* gap: 4px; */
+}
+
+.card__icon-button {
+  block-size: 38px;
+  background-color: transparent;
+  border: 2px transparent solid;
+  cursor: pointer;
+}
+
+.heart {
+
+}
+
+.contour {
+
+}
+
+.main-body {
+
+}
+
+.core {
+
+}
+
+.sparks {
+
+}
+
+.card__like-button {
+  min-block-size: 38px;
+  min-inline-size: 130px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.button {
+  border: 2px #000 solid;
+  font-family: var(--accent-font-family);
+  background-color: var(--content-bg-color, #fff);
+  font-size: 0.875rem;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.button__text {
+
 }

@@ -9,6 +9,7 @@
   --card-title-font-weight: 715;
   --header-title-font-size: clamp(3.0625rem, 2.71rem + 1.50vw, 4.0625rem);
   --header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --card-font-size: 1.125rem;
 
   --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 
@@ -26,4 +27,10 @@
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
     --content-bg-color: #fff;
+    --text-stroke-color: #fff;
+
+    --heart-main-color: #f00;
+    --heart-contour-color: #000;
+    --heart-sparks-color: #f00;
+    --animation-fill-color: #f00;
 }
