@@ -162,17 +162,18 @@
   justify-self: end;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
 }
 
 .card__icon-button {
+  display: flex;
   border: 2px transparent solid;
   padding: 0;
   background-color: transparent;
   transition: 0.3s ease;
   cursor: pointer;
   block-size: 38px;
-  inline-size: 35px;
+  /* inline-size: 38px; */
 }
 
 .card__icon-button:focus {
