@@ -217,7 +217,7 @@
 
 .save-dialog {
   inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
-  padding: 30px clamp(30px, 43.52px + -0.94vw, 40px);
+  padding: 26px clamp(30px, 43.52px + -0.94vw, 40px);
 
 }
 
@@ -226,15 +226,20 @@
   gap: 30px;
 }
 
+.save-dialog::backdrop {
+  background-color: #000;
+  opacity: 75%;
+}
+
 .dialog-content {
   display: flex;
   gap: 20px;
   place-items: center;
 }
 
-.dialog-content-svg {
+.dialog-content svg {
   place-self: center;
-  inline-size: 39px;
+  min-inline-size: 39px;
   block-size: 39px;
 }
 
