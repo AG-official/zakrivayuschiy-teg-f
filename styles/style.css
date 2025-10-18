@@ -93,6 +93,34 @@
   object-position: right;
 }
 
+.filter-blur {
+  filter: blur(3px);
+}
+
+.filter-grayscale {
+  filter: grayscale(100%);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.filter-invert {
+  filter: invert(75%);
+}
+
+.filter-opacity {
+  filter: opacity(50%);
+}
+
+.filter-sepia {
+  filter: sepia(50%);
+}
+
+.filter-saturate-contrast {
+  filter: saturate(150%) contrast(150%);
+}
+
 .card__label {
   position: absolute;
   top: 25px;
