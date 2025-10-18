@@ -169,6 +169,56 @@
   cursor: pointer;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  transition: 0.3s ease;
+  border-color: #000;
+}
+
+.button {
+  border: 2px #000 solid;
+  font-family: var(--accent-font-family);
+  background-color: var(--content-bg-color, #fff);
+  font-size: 0.875rem;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px #000;
+  transition: 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  transition:0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
 .heart {
 
 }
@@ -194,20 +244,6 @@
   min-inline-size: 130px;
   text-transform: capitalize;
   cursor: pointer;
-}
-
-.button {
-  border: 2px #000 solid;
-  font-family: var(--accent-font-family);
-  background-color: var(--content-bg-color, #fff);
-  font-size: 0.875rem;
-  transition: box-shadow 0.3s ease;
-  /* position: relative; */
-  cursor: pointer;
-}
-
-.button__text {
-  
 }
 
 .save-button {
