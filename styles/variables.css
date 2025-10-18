@@ -1,32 +1,25 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-/* Шрифты */
+  /* Шрифты */
   --primary-font-family: "Inter-Variable";
   --accent-font-family: "PressStart2P";
   --primary-font-weight: 410;
   --secondary-font-weight: 400;
   --card-title-font-weight: 715;
-  --header-title-font-size: clamp(3.0625rem, 2.71rem + 1.50vw, 4.0625rem);
+  --header-title-font-size: clamp(3.0625rem, 2.71rem + 1.5vw, 4.0625rem);
   --header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --card-font-size: 1.125rem;
 
-/* Размеры */
+  /* Размеры */
   --content-width: clamp(375px, 260.56px + 30.52vw, 700px);
   --save-button-width: clamp(306px, 295.79px + 2.72vw, 335px);
+  --primary-border: 2px #000 solid;
 
-/* Цвета */
+  /* Цвета */
   --page-background-image:
-    repeating-linear-gradient(
-      to right,
-      #d3d3d3 0 2px,
-      transparent 2px 4px),
-
-    repeating-linear-gradient(
-      to bottom,
-      #d3d3d3 0 2px,
-      transparent 2px 4px),
-
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
   --content-bg-color: #fff;

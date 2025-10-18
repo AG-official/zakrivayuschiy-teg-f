@@ -11,35 +11,42 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  place-items: center;
   font-family: var(--primary-font-family), Arial, sans-serif;
-  font-variation-settings: "wght" var(--primary-font-weight, 410);
   background-image: var(--page-background-image);
   background-attachment: fixed;
-  place-items: center;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--primary-font-weight, 410);
 }
 
 .header {
   display: grid;
-  margin: 100px clamp(0px, -130.28px + 34.74vw, 370px);
   gap: 20px;
-  font-family: var(--accent-font-family), Arial, sans-serif;
+  margin: 100px clamp(0px, -130.28px + 34.74vw, 370px);
+  border: var(--primary-border, 2px #000 solid);
+  padding: calc(clamp(122px, 119.18px + 0.75vw, 130px) - 2px)
+    calc(clamp(16px, -21.5px + 10vw, 122.5px) - 2px);
+  font-family: var(--accent-font-family), fantasy, sans-serif;
   font-weight: var(--secondary-font-weight, 400);
-  inline-size: var(--content-width, clamp(375px, 260.56px + 30.52vw, 700px));
-  background-color: var(--content-bg-color, #fff);
-  padding: calc(clamp(122px, 119.18px + 0.75vw, 130px) - 2px) calc(clamp(16px, -21.50px + 10.00vw, 122.5px) - 2px);
-  border: 2px #000 solid;
   text-align: center;
+  background-color: var(--content-bg-color, #fff);
+  inline-size: var(--content-width, clamp(375px, 260.56px + 30.52vw, 700px));
 }
 
 .header__title {
-  font-size: var(--header-title-font-size, clamp(3.0625rem, 2.71rem + 1.50vw, 4.0625rem));
+  font-size: var(
+    --header-title-font-size,
+    clamp(3.0625rem, 2.71rem + 1.5vw, 4.0625rem)
+  );
   text-transform: uppercase;
 }
 
 .header__subtitle {
-  font-size: var(--header-subtitle-font-size, clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem));
+  font-size: var(
+    --header-subtitle-font-size,
+    clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem)
+  );
   text-transform: uppercase;
 }
 
@@ -47,8 +54,11 @@
   display: grid;
   place-items: center;
   gap: 50px;
-  inline-size: var(--content-width, clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem));
   margin-block-end: 100px;
+  inline-size: var(
+    --content-width,
+    clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem)
+  );
 }
 
 .content__cards-list {
@@ -57,29 +67,31 @@
 }
 
 .card {
+  border: var(--primary-border, 2px #000 solid);
   background-color: var(--content-bg-color, #fff);
-  border: 2px #000 solid;
 }
 
 .card__title {
-  font-size: var(--card-font-size, 1.125rem);
-  font-variation-settings: "wght" var(--card-title-font-weight, 715);
+  border-block-end: var(--primary-border, 2px #000 solid);
   padding: 5.5px 10px;
-  border-block-end: 2px #000 solid;
+  font-size: var(--card-font-size, 1.125rem);
   line-height: 120%;
+  font-variation-settings: "wght" var(--card-title-font-weight, 715);
 }
 
 .card_image-wrapper {
   position: relative;
-  block-size: calc(var(--content-width) - 4px);
+  max-block-size: calc(var(--content-width) - 4px);
+  max-inline-size: calc(var(--content-width) - 4px);
   aspect-ratio: 1 / 1;
 }
 
 .card__image {
-  inline-size: 100%;
   object-fit: cover;
-  aspect-ratio: 1 / 1;
   object-position: right;
+  inline-size: 100%;
+  block-size: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .filter-blur {
@@ -114,47 +126,53 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  mix-blend-mode: hard-light;
-  font-family: var(--accent-font-family);
-  font-size: 0.875rem;
   opacity: 0.5;
+  font-family: var(--accent-font-family), fantasy, sans-serif;
+  font-size: 0.875rem;
   text-shadow:
-    -1px 0 var(--text-stroke-color),
-    0 1px var(--text-stroke-color),
-    1px 0 var(--text-stroke-color),
-    0 -1px var(--text-stroke-color);
+    -1px 0 var(--text-stroke-color, #fff),
+    0 1px var(--text-stroke-color, #fff),
+    1px 0 var(--text-stroke-color, #fff),
+    0 -1px var(--text-stroke-color, #fff);
+  mix-blend-mode: hard-light;
 }
 
-@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) {
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color, #fff)) {
   .card__label {
     text-shadow: none;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
   }
 }
 
 .card__paragraph-wrapper {
   display: grid;
   gap: 25px;
+  border-block-start: var(--primary-border, 2px #000 solid);
   padding: 25px;
-  border-block-start: 2px #000 solid;
 }
 
 .card__paragraph {
   font-size: var(--card-font-size, 1.125rem);
   line-height: 21px;
+  max-inline-size: calc(var(--content-width) - 54px);
 }
 
 .card__buttons-wrapper {
-  justify-self: end;
   display: flex;
-  align-items: end;
+  justify-self: end;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
 .card__icon-button {
-  block-size: 38px;
-  background-color: transparent;
   border: 2px transparent solid;
+  padding: 0;
+  background-color: transparent;
+  transition: 0.3s ease;
   cursor: pointer;
+  block-size: 38px;
+  inline-size: 35px;
 }
 
 .card__icon-button:focus {
@@ -162,19 +180,18 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
-  transition: 0.3s ease;
   border-color: #000;
+  outline: none;
 }
 
 .button {
-  border: 2px #000 solid;
-  font-family: var(--accent-font-family);
-  background-color: var(--content-bg-color, #fff);
-  font-size: 0.875rem;
-  transition: box-shadow 0.3s ease;
   position: relative;
+  border: var(--primary-border, 2px #000 solid);
   overflow: hidden;
+  font-family: var(--accent-font-family), fantasy, sans-serif;
+  font-size: 0.875rem;
+  background-color: var(--content-bg-color, #fff);
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -184,7 +201,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px #000;
-  transition: 0.3s ease;
 }
 
 .button::before {
@@ -201,7 +217,7 @@
 }
 
 .contour {
-  fill: var(--heart-contour-color);
+  fill: var(--heart-contour-color, #000);
   transition: fill 0.1s linear;
 }
 
@@ -220,33 +236,33 @@
 }
 
 .like-icon:hover .core {
-  fill: var(--heart-contour-color);
+  fill: var(--heart-contour-color, #000);
   transition: fill 0.3s linear 0s;
 }
 
 .like-icon:hover .main-body {
-  fill: var(--heart-contour-color);
+  fill: var(--heart-contour-color, #000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0s;
 }
 
 .like-icon:active .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0s;
-  fill: var(--animation-fill-color);
 }
 
 .like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0.05s;
-  fill: var(--animation-fill-color);
 }
 
 .like-icon.is-liked .heart {
@@ -255,8 +271,8 @@
 }
 
 .like-icon.is-liked .contour {
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0.06s;
-  fill: var(--animation-fill-color);
   transform-origin: center;
 }
 
@@ -265,22 +281,23 @@
 }
 
 .card__like-button {
-  min-block-size: 38px;
-  min-inline-size: 130px;
+  padding: 0;
   text-transform: capitalize;
   cursor: pointer;
+  min-block-size: 38px;
+  min-inline-size: 130px;
 }
 
 .button__text {
   position: relative;
   z-index: 1;
-  mix-blend-mode: difference;
   color: #fff;
+  mix-blend-mode: difference;
 }
 
 .save-button {
-  inline-size: var(--save-button-width, clamp(306px, 295.79px + 2.72vw, 335px));
   padding: 15px 18px;
+  inline-size: var(--save-button-width, clamp(306px, 295.79px + 2.72vw, 335px));
 }
 
 .save-button__content {
@@ -291,8 +308,8 @@
 }
 
 .save-button__content svg {
-  inline-size: 28px;
   fill: #fff;
+  inline-size: 28px;
 }
 
 @media (width >= 1440px) {
@@ -310,9 +327,8 @@
 }
 
 .save-dialog {
-  inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
   padding: 26px clamp(30px, 43.52px + -0.94vw, 40px);
-
+  max-inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
 }
 
 .save-dialog[open] {
@@ -321,32 +337,32 @@
 }
 
 .save-dialog::backdrop {
-  background-color: #000;
   opacity: 75%;
+  background-color: #000;
 }
 
 .dialog-content {
   display: flex;
-  gap: 20px;
   place-items: center;
+  gap: 20px;
 }
 
 .dialog-content svg {
   place-self: center;
+  fill: #000;
   min-inline-size: 39px;
   block-size: 39px;
-  fill: #000;
 }
 
 .dialog-content-text {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy, sans-serif;
   font-size: 0.875rem;
   line-height: 150%;
   text-transform: uppercase;
 }
 
 .dialog-button {
-  inline-size: 100%;
   padding: 12.5px;
   text-transform: uppercase;
+  inline-size: 100%;
 }
