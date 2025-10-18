@@ -11,9 +11,11 @@
   --header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --card-font-size: 1.125rem;
 
+/* Размеры */
   --content-width: clamp(375px, 260.56px + 30.52vw, 700px);
   --save-button-width: clamp(306px, 295.79px + 2.72vw, 335px);
 
+/* Цвета */
   --page-background-image:
     repeating-linear-gradient(
       to right,
@@ -27,11 +29,11 @@
 
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
-    --content-bg-color: #fff;
-    --text-stroke-color: #fff;
+  --content-bg-color: #fff;
+  --text-stroke-color: #fff;
 
-    --heart-main-color: #f00;
-    --heart-contour-color: #000;
-    --heart-sparks-color: #f00;
-    --animation-fill-color: #f00;
+  --heart-main-color: #f00;
+  --heart-contour-color: #000;
+  --heart-sparks-color: #f00;
+  --animation-fill-color: #f00;
 }
