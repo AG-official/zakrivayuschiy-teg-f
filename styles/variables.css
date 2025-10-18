@@ -11,7 +11,8 @@
   --header-subtitle-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --card-font-size: 1.125rem;
 
-  --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --content-width: clamp(375px, 260.56px + 30.52vw, 700px);
+  --save-button-width: clamp(306px, 295.79px + 2.72vw, 335px);
 
   --page-background-image:
     repeating-linear-gradient(
